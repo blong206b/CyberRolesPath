@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OSINT Data Input</title>
+  <title>Personal Values Input</title>
   <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <h1>OSINT Data Input</h1>
-  <form id="osintForm">
-    <label for="company">Company Name:</label>
-    <input type="text" id="company" name="company"><br><br>
-
-    <label for="interviewer">Interviewer Name:</label>
-    <input type="text" id="interviewer" name="interviewer"><br><br>
-
-    <label for="notes">Notes:</label>
-    <textarea id="notes" name="notes"></textarea><br><br>
-
+  <h1>Personal Values Input</h1>
+  <form id="valuesForm">
+    <div id="valuesList"></div>
     <input type="submit" value="Submit">
   </form>
-
-  <h2>Stored Data:</h2>
-  <div id="storedData"></div>
+  
+  <h2>Your Scores:</h2>
+  <div id="scoredValues"></div>
 
   <script src="script.js"></script>
 </body>

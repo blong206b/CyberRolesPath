@@ -1,35 +1,11 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('osintForm');
-  let storedData = [];
+body {
+  font-family: Arial, sans-serif;
+}
 
-  // Load any existing data
-  if (localStorage.getItem('osintData')) {
-    storedData = JSON.parse(localStorage.getItem('osintData'));
-    renderStoredData();
-  }
+form {
+  margin-bottom: 20px;
+}
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const formData = new FormData(form);
-    const dataObject = {
-      company: formData.get('company'),
-      interviewer: formData.get('interviewer'),
-      notes: formData.get('notes')
-    };
-
-    storedData.push(dataObject);
-    localStorage.setItem('osintData', JSON.stringify(storedData));
-    renderStoredData();
-  });
-
-  function renderStoredData() {
-    const container = document.getElementById('storedData');
-    container.innerHTML = storedData.map((data, index) => {
-      return `<div class="data-entry">
-        <h3>${data.company}</h3>
-        <p>Interviewer: ${data.interviewer}</p>
-        <p>Notes: ${data.notes}</p>
-      </div>`;
-    }).join('');
-  }
-});
+.value-item {
+  margin-bottom: 10px;
+}
